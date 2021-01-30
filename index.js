@@ -10,7 +10,7 @@ const config = {
   },
   schemaFileRange: [1, 1], // select what schema files should be allowed
 }
-const base64 = new Buffer(`${config.taCredentials.username}:${config.taCredentials.password}`).toString('base64')
+const base64 = Buffer.from(`${config.taCredentials.username}:${config.taCredentials.password}`).toString('base64')
 const basicAuth = `Basic ${base64}`
 
 const headers = { 'Authorization': basicAuth }
